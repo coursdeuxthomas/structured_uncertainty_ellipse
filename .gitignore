@@ -1,0 +1,22 @@
+# Environnements virtuels
+venv/
+.venv/
+env/
+
+# Caches Python
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Résultats / sorties volumineuses
+results/
+*.ckpt
+*.pth
+*.pt
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

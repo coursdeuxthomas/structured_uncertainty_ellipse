@@ -1,0 +1,309 @@
+# MÉMO TERMINAL WINDOWS / VSCODE
+
+## Où suis-je ?
+
+Afficher le dossier courant :
+
+```bash
+pwd
+```
+
+ou sous Windows classique :
+
+```cmd
+cd
+```
+
+---
+
+## Lister les fichiers du dossier
+
+PowerShell :
+
+```powershell
+ls
+```
+
+ou
+
+```powershell
+dir
+```
+
+Résultat :
+
+```text
+data/
+models/
+train.py
+eval.py
+```
+
+---
+
+## Entrer dans un dossier
+
+```bash
+cd data
+```
+
+Exemple :
+
+```bash
+cd models
+```
+
+---
+
+## Revenir au dossier précédent
+
+```bash
+cd ..
+```
+
+Exemple :
+
+```text
+projet/
+ ├─ data/
+ └─ models/
+```
+
+Si je suis dans :
+
+```bash
+projet/data
+```
+
+alors :
+
+```bash
+cd ..
+```
+
+me ramène dans :
+
+```bash
+projet
+```
+
+---
+
+## Revenir de deux dossiers
+
+```bash
+cd ../..
+```
+
+---
+
+## Aller directement à un chemin
+
+```bash
+cd C:\Users\Thomas\Documents\Projet
+```
+
+ou
+
+```bash
+cd "C:\Users\Thomas\Mon Projet"
+```
+
+(si le nom contient des espaces)
+
+---
+
+## Créer un dossier
+
+```bash
+mkdir data
+```
+
+ou
+
+```bash
+mkdir models
+```
+
+---
+
+## Créer plusieurs dossiers
+
+```bash
+mkdir data models utils
+```
+
+---
+
+## Créer un fichier vide
+
+PowerShell :
+
+```powershell
+New-Item train.py -ItemType File
+```
+
+ou
+
+```powershell
+ni train.py -ItemType File
+```
+
+---
+
+## Copier un fichier
+
+```bash
+copy train.py train_backup.py
+```
+
+ou PowerShell :
+
+```powershell
+cp train.py train_backup.py
+```
+
+---
+
+## Déplacer un fichier
+
+```powershell
+mv train.py models/
+```
+
+---
+
+## Supprimer un fichier
+
+```powershell
+rm train.py
+```
+
+---
+
+## Supprimer un dossier vide
+
+```powershell
+rmdir data
+```
+
+---
+
+## Ouvrir VSCode dans le dossier courant
+
+```bash
+code .
+```
+
+Très pratique :
+
+```bash
+cd mon_projet
+code .
+```
+
+---
+
+## Exécuter un script Python
+
+```bash
+python train.py
+```
+
+ou
+
+```bash
+python eval.py
+```
+
+---
+
+## Installer une bibliothèque
+
+```bash
+pip install torch
+```
+
+ou plusieurs :
+
+```bash
+pip install torch torchvision matplotlib numpy
+```
+
+---
+
+## Vérifier les bibliothèques installées
+
+```bash
+pip list
+```
+
+---
+
+## Créer un environnement virtuel
+
+```bash
+python -m venv venv
+```
+
+---
+
+## Activer l'environnement virtuel
+
+Windows :
+
+```powershell
+venv\Scripts\activate
+```
+
+Si tout va bien :
+
+```text
+(venv) C:\Users\Thomas\Projet>
+```
+
+---
+
+## Désactiver l'environnement
+
+```bash
+deactivate
+```
+
+---
+
+## Structure typique d'un projet PyTorch
+
+```text
+projet/
+│
+├── data/
+│   ├── train/
+│   └── val/
+│
+├── models/
+│   └── dncnn.py
+│
+├── utils/
+│   └── dataset.py
+│
+├── train.py
+├── eval.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## Commandes que tu utiliseras le plus
+
+```bash
+ls
+cd dossier
+cd ..
+pwd
+python train.py
+python eval.py
+pip install ...
+code .
+```
