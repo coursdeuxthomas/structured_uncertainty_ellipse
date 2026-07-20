@@ -93,3 +93,9 @@ l'entraînement : on optimise la log-vraisemblance négative (NLL) gaussienne
 - [ ] `model.py` — réseau (Cholesky creuse, voisinage 5×5).
 - [ ] `loss.py` — NLL adaptée à la Cholesky creuse.
 - [ ] `train.py` / `eval.py` / `main.py`.
+
+## Références
+- references/tf_mvg/ : implémentation TF des structured uncertainty prediction 
+  networks (Dorta et al.), utile pour la paramétrisation Cholesky/sparse 
+  des covariances. S'en inspirer pour notre module d'incertitude.
+  Le code est en tenserflow attention je veux travailler en pytorch.
