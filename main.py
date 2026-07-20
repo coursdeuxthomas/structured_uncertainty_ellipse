@@ -33,17 +33,17 @@ def get_config(smoke=False):
     cfg = {
         "image_size": 16,
         "f": 5,                 # voisinage 5×5
-        "num_train": 35000,     # tailles article
+        "num_train": 15000,     # tailles article
         "num_test": 1000,
         "num_val": 1000,
-        "epochs": 200,          # article
+        "epochs": 50,          # article
         "batch_size": 64,
         "lr": 1e-3,
         "base_ch": 32,
         "norm_input": True,
         "seed": 0,
         "results_root": "results",   # racine ; le dossier du run est créé dedans
-        "device": "cpu",
+        "device": "cuda" if torch.cuda.is_available() else "cpu",
     }
     if smoke:
         cfg.update({
@@ -105,6 +105,11 @@ def main():
     cfg = get_config(smoke=args.smoke)
     if args.epochs is not None:
         cfg["epochs"] = args.epochs
+
+    if cfg["device"] == "cuda":
+        print("GPU :", torch.cuda.get_device_name(0))
+    else:
+        print("Run sur CPU")
 
     # Dossier de run propre et horodaté (jamais d'ecrasement entre deux runs).
     tag = args.tag or ("smoke" if args.smoke else "article")

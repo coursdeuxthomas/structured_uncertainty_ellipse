@@ -1,0 +1,94 @@
+Job started on:
+node020
+Mon Jul 20 13:43:18 CEST 2026
+Python used:
+/home/tbouru/miniconda3/envs/dncnn/bin/python
+Checking PyTorch:
+torch: 2.11.0+cu128
+cuda: True
+GPU : Tesla T4
+Dossier du run : results/mid_gpu_20260720-134323
+Config : {
+  "image_size": 16,
+  "f": 5,
+  "num_train": 15000,
+  "num_test": 1000,
+  "num_val": 1000,
+  "epochs": 50,
+  "batch_size": 64,
+  "lr": 0.001,
+  "base_ch": 32,
+  "norm_input": true,
+  "seed": 0,
+  "results_root": "results",
+  "device": "cuda",
+  "run_name": "mid_gpu_20260720-134323",
+  "results_dir": "results/mid_gpu_20260720-134323"
+}
+Generation du dataset d'entrainement (15000 exemples)...
+Generation du dataset de validation (1000 exemples)...
+Generation du dataset de test (1000 exemples)...
+Debut de l'entrainement : 50 epochs, 15000 exemples, batch 64, lr 1.0e-03
+epoch   1/50 | train NLL   -406.737 | val NLL   -469.286 | 16.2s  <- meilleur
+epoch   2/50 | train NLL   -478.855 | val NLL   -483.129 | 2.5s  <- meilleur
+epoch   3/50 | train NLL   -484.315 | val NLL   -485.504 | 2.5s  <- meilleur
+epoch   4/50 | train NLL   -485.502 | val NLL   -485.764 | 2.5s  <- meilleur
+epoch   5/50 | train NLL   -486.252 | val NLL   -486.656 | 2.5s  <- meilleur
+epoch   6/50 | train NLL   -486.862 | val NLL   -487.052 | 2.5s  <- meilleur
+epoch   7/50 | train NLL   -487.193 | val NLL   -487.557 | 2.5s  <- meilleur
+epoch   8/50 | train NLL   -487.425 | val NLL   -487.416 | 2.5s
+epoch   9/50 | train NLL   -487.498 | val NLL   -486.721 | 2.6s
+epoch  10/50 | train NLL   -487.711 | val NLL   -487.953 | 2.4s  <- meilleur
+epoch  11/50 | train NLL   -487.965 | val NLL   -487.841 | 2.5s
+epoch  12/50 | train NLL   -488.053 | val NLL   -487.758 | 2.4s
+epoch  13/50 | train NLL   -488.242 | val NLL   -487.803 | 2.4s
+epoch  14/50 | train NLL   -488.346 | val NLL   -487.927 | 2.4s
+epoch  15/50 | train NLL   -488.431 | val NLL   -488.136 | 2.4s  <- meilleur
+epoch  16/50 | train NLL   -488.515 | val NLL   -488.042 | 2.4s
+epoch  17/50 | train NLL   -488.567 | val NLL   -488.326 | 2.4s  <- meilleur
+epoch  18/50 | train NLL   -488.740 | val NLL   -488.202 | 2.5s
+epoch  19/50 | train NLL   -488.813 | val NLL   -488.169 | 2.4s
+epoch  20/50 | train NLL   -488.854 | val NLL   -488.413 | 2.5s  <- meilleur
+epoch  21/50 | train NLL   -488.945 | val NLL   -488.262 | 2.4s
+epoch  22/50 | train NLL   -489.032 | val NLL   -488.552 | 2.4s  <- meilleur
+epoch  23/50 | train NLL   -489.133 | val NLL   -487.929 | 2.4s
+epoch  24/50 | train NLL   -489.196 | val NLL   -488.135 | 2.4s
+epoch  25/50 | train NLL   -489.298 | val NLL   -488.437 | 2.5s
+epoch  26/50 | train NLL   -489.336 | val NLL   -488.501 | 2.4s
+epoch  27/50 | train NLL   -489.387 | val NLL   -488.190 | 2.4s
+epoch  28/50 | train NLL   -489.457 | val NLL   -488.247 | 2.4s
+epoch  29/50 | train NLL   -489.556 | val NLL   -487.997 | 2.4s
+epoch  30/50 | train NLL   -489.640 | val NLL   -488.218 | 2.4s
+epoch  31/50 | train NLL   -489.677 | val NLL   -488.054 | 2.4s
+epoch  32/50 | train NLL   -489.753 | val NLL   -488.333 | 2.4s
+epoch  33/50 | train NLL   -489.820 | val NLL   -488.439 | 2.4s
+epoch  34/50 | train NLL   -489.873 | val NLL   -488.263 | 2.4s
+epoch  35/50 | train NLL   -489.962 | val NLL   -488.378 | 2.4s
+epoch  36/50 | train NLL   -489.999 | val NLL   -488.187 | 2.4s
+epoch  37/50 | train NLL   -490.074 | val NLL   -488.146 | 2.4s
+epoch  38/50 | train NLL   -490.180 | val NLL   -487.922 | 2.4s
+epoch  39/50 | train NLL   -490.194 | val NLL   -488.062 | 2.4s
+epoch  40/50 | train NLL   -490.248 | val NLL   -488.195 | 2.4s
+epoch  41/50 | train NLL   -490.353 | val NLL   -488.201 | 2.4s
+epoch  42/50 | train NLL   -490.402 | val NLL   -488.108 | 2.4s
+epoch  43/50 | train NLL   -490.431 | val NLL   -488.052 | 2.4s
+epoch  44/50 | train NLL   -490.483 | val NLL   -488.066 | 2.4s
+epoch  45/50 | train NLL   -490.485 | val NLL   -488.133 | 2.4s
+epoch  46/50 | train NLL   -490.612 | val NLL   -488.084 | 2.4s
+epoch  47/50 | train NLL   -490.625 | val NLL   -487.867 | 2.4s
+epoch  48/50 | train NLL   -490.708 | val NLL   -487.612 | 2.4s
+epoch  49/50 | train NLL   -490.795 | val NLL   -487.844 | 2.4s
+epoch  50/50 | train NLL   -490.808 | val NLL   -487.708 | 2.4s
+Entrainement termine. Meilleure NLL val : -488.552 (results/mid_gpu_20260720-134323/best_model.pt)
+courbe sauvegardee : results/mid_gpu_20260720-134323/learning_curve.png
+
+Evaluation sur le jeu de test...
+Metriques test :
+  NLL moyenne              : -489.5456
+  Erreur Frobenius relative: 0.2812
+  KL(vraie || predite)     : 3.8964
+figures sauvegardees : results/mid_gpu_20260720-134323/eval_correlation_maps.png | results/mid_gpu_20260720-134323/eval_samples.png
+
+Termine. Sorties dans : results/mid_gpu_20260720-134323
+Job finished:
+Mon Jul 20 13:47:06 CEST 2026
