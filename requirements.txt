@@ -1,0 +1,5 @@
+# Environnement CPU. torch 2.13.0 (wheel par défaut) est cassé ici (manque
+# torchgen) : on épingle une version >= 2.8.0 (cf. memoire projet).
+numpy>=1.24
+torch>=2.8.0
+matplotlib>=3.6

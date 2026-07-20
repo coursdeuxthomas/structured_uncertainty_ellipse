@@ -90,9 +90,20 @@ l'entraînement : on optimise la log-vraisemblance négative (NLL) gaussienne
 ## État d'avancement
 
 - [x] `dataset.py` — dataset des ellipses synthétiques.
-- [ ] `model.py` — réseau (Cholesky creuse, voisinage 5×5).
-- [ ] `loss.py` — NLL adaptée à la Cholesky creuse.
-- [ ] `train.py` / `eval.py` / `main.py`.
+- [x] `model.py` — réseau (Cholesky creuse, voisinage 5×5), petit U-Net 16×16.
+- [x] `loss.py` — NLL structurée creuse (`build_neighbor_indices`, `apply_LT`,
+  `structured_gaussian_nll`) + reconstruction dense pour l'éval.
+- [x] `train.py` / `eval.py` / `main.py` — pipeline complet, testé de bout en bout.
+
+### Notes d'implémentation (pour reprise)
+- Motif de parcimonie : voisins CAUSAUX d'un patch f×f en ordre raster
+  (`loss.causal_offsets` : `dr < 0` ou `dr==0 & dc<0`) → `L` triangulaire
+  inférieure, `m = (f²-1)/2 = 12` valeurs hors-diag + 1 diag par pixel.
+- Le réseau sort `log_diag [B,n]` et `offdiag [B,n,12]` (13 canaux d'une conv 1×1).
+- La loss calcule `L^T r` par `scatter_add` (jamais de matrice n×n à
+  l'entraînement) ; `build_L_dense` n'est utilisé qu'en évaluation (n=256 petit).
+- Lancer : `./venv/Scripts/python.exe main.py` (config article : 35k, 200 epochs)
+  ou `--smoke` (run rapide de bout en bout). Sorties dans `results/`.
 
 ## Références
 - references/tf_mvg/ : implémentation TF des structured uncertainty prediction 
